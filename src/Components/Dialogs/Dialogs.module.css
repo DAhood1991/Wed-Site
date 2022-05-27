@@ -1,18 +1,17 @@
-.dialogs {
-    display: grid;
-    grid-template-columns: 2fr 10fr;
-}
+/*.dialogs {*/
+/*    display: grid;*/
+/*    grid-template-columns: 2fr 10fr;*/
+/*}*/
 
-.dialogsItems {
-    padding: 10px;
-    text-decoration: none;
-}
+/*.dialogsItems .dialog {*/
+/*    padding: 10px;*/
+/*    text-decoration: none;*/
+/*}*/
 
-.dialogsItems .active {
-    color: gold;
-}
+/*.dialogsItems .active {*/
+/*    color: palegreen;*/
+/*}*/
 
-.messages .message {
-    padding: 10px;
-
-}
+/*.messages .message {*/
+/*    padding: 10px;*/
+/*}*/
