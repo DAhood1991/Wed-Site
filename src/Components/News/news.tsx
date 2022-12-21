@@ -1,12 +1,15 @@
 import React from "react";
 import s from "./news.module.css"
 
+type NewsPropsType ={
+    title:string
+}
 
-export const News = () => {
+export const News:React.FC<NewsPropsType> = (props) => {
     return(
         <div className={s.content}>
             <h3>
-                Ny i Nowosti
+                {props.title}
             </h3>
         </div>
     )

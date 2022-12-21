@@ -1,22 +1,28 @@
 import React from "react";
 import s from './MyPosts.module.css'
-import {Post} from "../Post/Post";
+import {Post} from "./Post/Post";
+import {TypePosts} from "../../../State/State";
 
+type PostsPropsType ={
+    posts:Array<TypePosts>
+}
 
-export const MyPosts = () => {
+export const MyPosts:React.FC<PostsPropsType> = (props) => {
+
+    const postItem = props.posts.map((el) => {
+        return (<Post  message={el.message} likeCount={el.likeCount}/>)
+    })
+
     return (
         <div className={s.item}>
-          <h3>My posts</h3>
+            <h3>MoI posti</h3>
             <div>
-
-                <div>
-                    <textarea></textarea>
-                </div>
-                <button>add post</button>
+                <textarea>PUSH ME</textarea>
             </div>
+            <button>add post</button>
+
             <div className={s.item}>
-                <Post message={"Hello AM fine"} like={0}/>
-                <Post message={"YO"} like={23}/>
+                {postItem}
             </div>
         </div>
 

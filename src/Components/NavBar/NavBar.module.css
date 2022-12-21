@@ -4,9 +4,14 @@
     padding: 20px;
 }
 .item a {
-    color: aliceblue;
+    color: #f6f6f8;
     text-decoration: none;
 }
 .item a.active{
-    color:black;
+    color: #b3c6e0;
+}
+.item img{
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
 }

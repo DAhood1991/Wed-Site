@@ -3,7 +3,7 @@ import s from "./music.module.css"
 
 
 export const Music = () => {
-    return(
+    return (
         <div className={s.content}>
             <h3>
                 The GAME Forever

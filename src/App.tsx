@@ -1,32 +1,36 @@
 import React from 'react';
 import './App.css';
-import { Dialogs } from './Components/Dialogs/Dialogs';
+import {Messages} from './Components/Dialogs/Messages';
 import {Header} from "./Components/Header/Header";
 import {NavBar} from "./Components/NavBar/NavBar";
 import {Profile} from "./Components/Profile/Profile";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import {News} from "./Components/News/news";
 import {Settings} from "./Components/Settings/settings";
 import {Music} from "./Components/Music/music";
+import {RootStateType} from "./State/State";
+import {Sidebar} from "./Components/Sidebar/Sidebar";
 
+type AppType = {
+    state: RootStateType
+}
 
-function App() {
+function App(props: AppType) {
+
     return (
-        <BrowserRouter>
         <div className="app-wrapper">
             <Header/>
             <NavBar/>
             <div className='app-wrapper-content'>
-                <Route  path='/dialogs' component={Dialogs}/>
-                <Route  path='/profile' component={Profile}/>
-                <Route  path='/news' component={News}/>
-                <Route  path='/settings' component={Settings}/>
-                <Route  path='/music' component={Music}/>
+                <Route path='/messages' render={() => <Messages state={props.state.DialogsPage}/>}/>
+                <Route path='/profile' render={() => <Profile state={props.state.ProfilePage}/>}/>
+                <Route path='/news' render={() => <News title={"Bitcoin is DEAD"}/>}/>
+                <Route path='/settings' render={() => <Settings/>}/>
+                <Route path='/music' render={() => <Music/>}/>
+                <Route path='/friends' render={()=><Sidebar/>}/>
             </div>
-
-
         </div>
-        </BrowserRouter>)
+    )
 
 }
 
